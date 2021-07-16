@@ -5,8 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Location de vélo</title>
+   <link rel="shortcut icon" href="#">  <!-- corrige "favicon.ico error" dans la console -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.css'/>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./public/css/style.css">
 </head>
 <body>
   <div id="app">
@@ -17,7 +19,7 @@
       <article>
         <div class="container bg-light text-center p-1">
           <p>Suivre nos vélos sur la carte</p>
-          <div id="map">
+          <div id="map" class="map">
 
           </div>
         </div>
@@ -25,7 +27,9 @@
     </div>
       
   </div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.1.4/vue.global.js'></script>
-<script src="./js/app.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.1.4/vue.global.js'></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="./public/js/map.js"></script>
+  <script src="./public/js/app.js"></script>
 </body>
 </html>

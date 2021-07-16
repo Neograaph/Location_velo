@@ -1,7 +1,7 @@
 const vm = Vue.createApp({
   data(){
     return{
-      title: "Nom de notre site",
+      title: "Location de vélo",
     }
   }
 }).mount("#app")

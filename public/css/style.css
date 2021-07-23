@@ -1,5 +1,6 @@
 /* ajouter des polices */
-#map
-{
+#map{
     height: 600px;
+    /* width: 150%; */
 }
+/* https://wordpress.org/support/topic/full-map-not-loading/ */

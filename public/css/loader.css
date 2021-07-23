@@ -1,4 +1,4 @@
-/* Center the loader */
+/* Center the loader
 #loader {
   position: absolute;
   left: 50%;
@@ -25,15 +25,15 @@
 }
 
 /* Add animation to "page content" */
-.animate-bottom {
+/* .animate-bottom {
   position: relative;
   -webkit-animation-name: animatebottom;
   -webkit-animation-duration: 1s;
   animation-name: animatebottom;
   animation-duration: 1s
-}
+} */
 
-@-webkit-keyframes animatebottom {
+/* @-webkit-keyframes animatebottom {
   from { bottom:-100px; opacity:0 } 
   to { bottom:0px; opacity:1 }
 }
@@ -46,4 +46,15 @@
 #main {
   display: none;
   text-align: center;
+} */
+
+.loader{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.loader>img{
+  max-width: 100vw;
+  max-height: 90vh;
 }

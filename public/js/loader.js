@@ -1,7 +1,7 @@
 let timerLoader;
 loading();
 function loading() {
-  timerLoader = setTimeout(showPage, 500);
+  timerLoader = setTimeout(showPage, 5000);
 }
 
 function showPage() {

@@ -16,7 +16,19 @@ function initTheMap()
     let url = "https://api.jcdecaux.com/vls/v3/stations?contract=Lyon&apiKey=f29a4663948246f1b9fd88aaf9897f6f96575fda";
     fetch(url)
     .then(response => response.json())
-    .then(response => console.log(response))
+    // .then(response => console.log(response))
+    .then(response => filterData(response))
     .catch(error => alert("Erreur : " + error));
 
+}
+// fonction pour filtrer la data reçu en fonction d'une condition et push les résultats dans un nouveau tableau
+let dataFiltered = []
+function filterData(data){
+    console.log(data);
+    for (i = 0; i < data.length; i++){
+        if (data[i].number == "3099"){
+            dataFiltered.push(data[i]);
+        }
+    }
+    console.log(dataFiltered);
 }

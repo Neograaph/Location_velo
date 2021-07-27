@@ -1,9 +1,9 @@
 /* ajouter des polices */
 #map{
+    z-index: 1;
     height: 600px;
     width: 100%;
 }
 body{
     background: black;
 }
-/* https://wordpress.org/support/topic/full-map-not-loading/ */

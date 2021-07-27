@@ -8,33 +8,28 @@
    <!-- <link rel="shortcut icon" href="#">  corrige "favicon.ico error" dans la console -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.css'/>
-  <link rel="stylesheet" href="./public/css/style.css">
   <link rel="stylesheet" href="./public/css/loader.css">
-  
+  <link rel="stylesheet" href="./public/css/style.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
 </head>
 <body >
-  <!-- <div onload="loading()" style="margin:0;"> -->
+  <section >
     <div class="loader" id="loader" >
+      <p class="mt-5 pt-5 display-1">loading ...</p>
       <img src="./public/img/loader.gif" alt="">
-      loading ...
     </div>
-    <div class="container-fluid animate-bottom main" id="main" style="display:none;" >
-      <div class="container text-center bg-light display-3 p-3">
-      Location de vélo
-      </div>
-      <article>
-        <div class="container bg-light text-center p-1">
-          <p>Suivre nos vélos sur la carte</p>
-          
+  </section>
+  <section id="main">
+    <div class="container-fluid">
+      <div class="col-md-12 bg-light text-center p-1">
         <div id="map" class="map"></div>
-        </div>
-      </article>
-      <canvas width="400" height="400">canvas off</canvas>
+      </div>
     </div>
-  <!-- </div> -->
-  <script src="./public/js/loader.js"></script>
+  </section>
+
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="./public/js/map.js"></script>
+  <script src="./public/js/loader.js"></script>
   <script src="./public/js/script.js"></script>
 </body>
 </html>

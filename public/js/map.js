@@ -1,6 +1,6 @@
 class Data {
     constructor(){}
-    importAPI() {
+    importApi() {
         let url = "https://api.jcdecaux.com/vls/v3/stations?contract=Lyon&apiKey=f29a4663948246f1b9fd88aaf9897f6f96575fda";
         fetch(url)
         .then(response => response.json())
@@ -21,13 +21,13 @@ class Data {
                 bikeStock.push(dataFiltered[i]);
             }
         }
-        dataa.initMap(bikeStock);
+        this.initMap(bikeStock);
         // console.log(data); // Données brutes
         // console.log(dataFiltered); // Stations ouvertes seulement 
-        console.log(bikeStock) // Vélos disponibles
+        // console.log(bikeStock) // Vélos disponibles
     };
     initMap(bikeStock){
-        let map = L.map('map').setView([45.75493922033646,4.84711760117186], 11);
+        let map = L.map('map').setView([45.75493922033646,4.84711760117186], 13);
         let osm = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
@@ -55,12 +55,16 @@ class Data {
                 address = "Adresse: " + bikeStock[i].address
             );
             let nbVDispo = "Nombre de vélo disponible(s): " + bikeStock[i].totalStands.availabilities.bikes;
-            L.marker([lat, long], {icon: myIcon}).addTo(map).bindPopup("<h1>" + name + "</h1> <p>" + address + "</br>" + nbVDispo + "</br></br><button class='book' id='book'>Réserver un vélo</button></p>");
+            L.marker([lat, long], {icon: myIcon}).addTo(map).bindPopup("<h3>" + name + "</h3> <p>" + address + "</br>" + nbVDispo + "</br></br><button class='book' id='book'>Réserver un vélo</button></p>");
         }
     };
 };    
-const dataa = new Data();
-window.onload = dataa.importAPI();
-
+$(document).ready(function(){
+    const dataa = new Data();
+    dataa.importApi();
+});
 // https://www.youtube.com/watch?v=5ZrYCt2BqSU&ab_channel=GeoDev
 // https://leafletjs.com/reference-1.7.1.html#icon
+
+// problème de taille de la map
+// https://github.com/Leaflet/Leaflet/issues/3002

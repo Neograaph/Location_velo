@@ -38,7 +38,7 @@ class Data {
         });
         osm.addTo(map);
         var myIcon = L.icon({
-            iconUrl: 'public/img/icontest.png',
+            iconUrl: 'public/img/marker.png',
             iconSize: [35, 45],
             iconAnchor: [22, 94],
             popupAnchor: [-3, -76],

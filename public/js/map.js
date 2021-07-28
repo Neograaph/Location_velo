@@ -24,7 +24,7 @@ class Data {
         this.initMap(bikeStock);
         // console.log(data); // Données brutes
         // console.log(dataFiltered); // Stations ouvertes seulement 
-        // console.log(bikeStock) // Vélos disponibles
+        console.log(bikeStock) // Vélos disponibles
     };
     initMap(bikeStock){
         let map = L.map('map').setView([45.75493922033646,4.84711760117186], 13);
@@ -55,7 +55,8 @@ class Data {
                 address = "Adresse: " + bikeStock[i].address
             );
             let nbVDispo = "Nombre de vélo disponible(s): " + bikeStock[i].totalStands.availabilities.bikes;
-            L.marker([lat, long], {icon: myIcon}).addTo(map).bindPopup("<h3>" + name + "</h3> <p>" + address + "</br>" + nbVDispo + "</br></br><button class='bookBtn' id='bookBtn'>Réserver un vélo</button></p>");
+            L.marker([lat, long], {icon: myIcon}).addTo(map).bindPopup("<h3>" + name + "</h3> <p>" + address + "</br>" + nbVDispo + "</br></br><button class='bookBtn' id='bookBtn' onclick='book()'>Réserver un vélo</button></p>");
+            // document.getElementById("flash").value = name;
         }
     };
 };    

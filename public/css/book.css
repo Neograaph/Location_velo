@@ -37,3 +37,6 @@ cursor: pointer;
 .bookNotif{
   z-index: 98;
 }
+.bookContent>h1{
+  color: black;
+}

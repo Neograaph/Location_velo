@@ -9,19 +9,22 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.css'/>
   <link rel="stylesheet" href="./public/css/loader.css">
-  <link rel="stylesheet" href="./public/css/style.css">
+  <link rel="stylesheet" href="./public/css/map..css">
   <link rel="stylesheet" href="./public/css/book.css">
   <link rel="stylesheet" href="./public/css/signature.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
 </head>
 <body >
+
+  <!-- au chargement de la page -->
   <section >
     <div class="loader" id="loader" >
-      <p class="mt-5 pt-5 display-1">loading ...</p>
+      <p class="mt-5 pt-5 display-1">chargement</p>
       <img src="./public/img/loader.gif" alt="">
     </div>
   </section>
 
+  <!-- section pour afficher la map -->
   <section id="main">
     <div class="container-fluid">
       <div class="col-md-12 bg-light text-center p-1">
@@ -52,11 +55,18 @@
     </div>
   </div>
   </section>
+
+  <!-- popup avec timer quand un vélo est réservé -->
+  <section>
+
+  </section>
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.js'></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="./public/js/signature.js"></script>
   <script src="./public/js/loader.js"></script>
   <script src="./public/js/book.js"></script>
   <script src="./public/js/map.js"></script>
+
 </body>
 </html>

@@ -31,3 +31,9 @@ color: #000;
 text-decoration: none;
 cursor: pointer;
 }
+
+/* Zone de notification quand il y a une réservation */
+
+.bookNotif{
+  z-index: 98;
+}

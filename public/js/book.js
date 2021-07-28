@@ -2,7 +2,7 @@ document.getElementById("flash").style.display = "none"
 
 function book(){
   let flash = document.getElementById("flash").value
-  // console.log(flash);
+  console.log(flash);
 
   let modal = document.getElementById("bookPopup");
   let span = document.getElementsByClassName("close")[0];

@@ -1,11 +1,5 @@
-let timerLoader;
-loading();
-function loading() {
-  timerLoader = setTimeout(showPage, 2000);
-}
+const loader = document.querySelector('.loader');
 
-function showPage() {
-  // console.log('script loader')
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("main").style.display = "block";
-}
+window.addEventListener('load', () => {
+    loader.classList.add('fondu-out');
+})

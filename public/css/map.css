@@ -2,7 +2,7 @@
 #map{
     z-index: 1;
     height: 600px;
-    width: 100%;
+    /* width: 600px; */
 }
 body{
     background: black;

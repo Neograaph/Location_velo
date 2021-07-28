@@ -17,7 +17,7 @@ class signature{
       // je stock mes coordonnées de départ
       this.prevX = e.clientX - this.canvas.offsetLeft
       this.prevY = e.clientY - this.canvas.offsetTop
-      console.log(this)
+      // console.log(this)
     })
     this.canvas.addEventListener("mousemove", (e) => {
       // si je signe 

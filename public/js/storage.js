@@ -4,7 +4,7 @@ $(function(){
     e.preventDefault();
     down();
     function down(){
-        count = 1200;
+        let count = 1200;
         let down = setInterval(timerdown, 1000);
         function timerdown() {
           if (count == 0){
@@ -12,7 +12,7 @@ $(function(){
             console.log(count)
           }
           else{
-            containerTest.innerText = count.toString();
+            $('#timer').innerText = count.toString();
             count--;
           }
         }
@@ -22,6 +22,9 @@ $(function(){
     };
   });
 });
+
+
+
 
 
 

@@ -37,6 +37,8 @@ class Data {
             accessToken: 'pk.eyJ1IjoibmVvZ3JhcGgiLCJhIjoiY2tyNmNwNG5xM2JmaTJvcWgzYjhqd3BmcSJ9.1FadDm5BTY_HcxSE39-7kA'
         });
         osm.addTo(map);
+
+        //custom icons
         var myIcon = L.icon({
             iconUrl: 'public/img/marker.png',
             iconSize: [35, 45],
@@ -53,20 +55,25 @@ class Data {
             }
             else (
                 address = "Adresse: " + bikeStock[i].address
-            );
+                );
             let nbVDispo = "Nombre de vélo disponible(s): " + bikeStock[i].totalStands.availabilities.bikes;
-            L.marker([lat, long], {icon: myIcon}).addTo(map).bindPopup("<h3 id='title'>" + name + "</h3> <p>" + address + "</br>" + nbVDispo + "</br></br><button class='bookBtn' id='bookBtn' onclick='book()'>Réserver un vélo</button></p>");
+            
+            // ajout des markers sur la carte et dans un tableau
+            L.marker([lat, long], {icon: myIcon}).addTo(map).bindPopup("<h3 id='title'>" + name + "</h3> <p>" + address + "</br>" + nbVDispo + "</br></br><button class='bookBtn' id='bookBtn' onclick='book(" + i + ")'>Réserver un vélo</button></p>");
+            // $(".leaflet-marker-icon").click(function(){
+            //     console.log('here')
+            // });
+            let markers = [];
+            markers.push(i);
+            // { numero: i, name: bikeStock[i].name, adr: bikeStock[i].address }
         }
+        console.log(markers.length);
+        $("#flash").value = markers;
     };
 };    
 $(document).ready(function(){
     const dataa = new Data();
     dataa.importApi();
-
-    $(".leaflet-marker-icon").click(function(){
-        console.log('here')
-        $("#flash").value = $("#title").textContent;
-    });
 });
 
 // https://www.youtube.com/watch?v=5ZrYCt2BqSU&ab_channel=GeoDev

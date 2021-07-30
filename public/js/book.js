@@ -1,8 +1,8 @@
-document.getElementById("flash").style.display = "none"
+// document.getElementById("flash").style.display = "none"
 
-function book(){
-  let flash = document.getElementById("flash").value
-  console.log(flash);
+function book(i){
+  // let flash = document.getElementById("flash").value
+  console.log(i);
 
   let modal = document.getElementById("bookPopup");
   let span = document.getElementsByClassName("close")[0];
@@ -17,3 +17,7 @@ function book(){
     };
   };
 };
+
+$("#submitBook").click(function() { 
+  console.log("réservation enregistrée")
+});

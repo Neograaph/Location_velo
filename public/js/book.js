@@ -1,7 +1,7 @@
-// document.getElementById("flash").style.display = "none"
+console.log(markers);
+// https://www.developpez.net/forums/d545930/javascript/general-javascript/variable-entre-fichiers-java-script/
 
 function book(i){
-  // let flash = document.getElementById("flash").value
   console.log(i);
 
   let modal = document.getElementById("bookPopup");

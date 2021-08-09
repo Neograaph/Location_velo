@@ -1,3 +1,4 @@
+let markers = [];
 class Data {
     constructor(){}
     importApi() {
@@ -61,14 +62,9 @@ class Data {
             
             // ajout des markers sur la carte et dans un tableau
             L.marker([lat, long], {icon: myIcon}).addTo(map).bindPopup("<h3 id='title'>" + name + "</h3> <p>" + address + "</br>" + nbVDispo + "</br></br><button class='bookBtn' id='bookBtn' onclick='book(" + i + ")'>Réserver un vélo</button></p>");
-            // $(".leaflet-marker-icon").click(function(){
-            //     console.log('here')
-            // });
-            markers.push(i);
+            markers.push(name);
             // { numero: i, name: bikeStock[i].name, adr: bikeStock[i].address }
         }
-        console.log(markers.length);
-        $("#flash").value = markers;
     };
 };    
 $(document).ready(function(){

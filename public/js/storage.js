@@ -23,11 +23,6 @@ $(function(){
   });
 });
 
-
-
-
-
-
   // deleteStorage.on("click",function(){
   //   localStorage.clear();
   //   alert("le local storage est nettoyé !");
@@ -38,7 +33,7 @@ $(function(){
   //   let myFirstName = localStorage.getItem("firstname");
   //   console.log(myFirstName);
   // });
-
+  
   // exist.on("click",function(e){
   //   e.preventDefault();
   //   let myFirstName = localStorage.getItem("firstname");

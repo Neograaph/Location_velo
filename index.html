@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Location de vélo</title>
    <!-- <link rel="shortcut icon" href="#">  corrige "favicon.ico error" dans la console -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.css'/>
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.css'/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   <link rel="stylesheet" href="./public/css/loader.css">
   <link rel="stylesheet" href="./public/css/map.css">
   <link rel="stylesheet" href="./public/css/book.css">
@@ -122,8 +123,9 @@
         <label for="name">Prénom</label><br>
         <input type="text" name="name" autocomplete="off" autofocus required><br>
         <label for="canvas">Signature</label><br>
-        <canvas id="signature" width="200" height="200"></canvas><br>
-        <a href="" id="effacer">Effacer</a><br>
+        <canvas id="signature" width="200" height="200"></canvas>
+        <canvas id="signatureEmpty" width="200" height="200"></canvas><br>
+        <a href="javascript:void(0)" id="effacer">Effacer</a><br>
         <p id="adr">Après avoir généré une réservation, vous avez 15 minutes pour vous rendre sur place pour récupérer votre vélo. <br> Dans le cas où les 15 minutes sont écoulées, la réservation est annulée
         </p>
         <input type="submit" value="Générer ma réservation" id="submitBook"></input>
@@ -146,8 +148,8 @@
       © 2021 Arthur Hardy & Maxime Gauthier. All Rights Reserved.
     </p>
   </footer>
-
   <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="./public/js/map.js"></script>
   <script src="./public/js/signature.js"></script>

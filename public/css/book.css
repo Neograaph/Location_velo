@@ -40,3 +40,6 @@ cursor: pointer;
 .bookContent>h1{
   color: black;
 }
+#signatureEmpty{
+  display: none;
+}

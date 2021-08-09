@@ -50,6 +50,8 @@ class signature{
 }
 window.onload = () => {
   let canvas = new signature("#signature")
+  let canvasCheck = new signature("#signatureEmpty")
+  // comparer le 2eme canvas pour vérifier qu'une signature est présente ici
 
   document.querySelector("#effacer").addEventListener("click", (e) => {
     e.preventDefault

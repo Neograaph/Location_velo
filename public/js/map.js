@@ -46,7 +46,6 @@ class Data {
             iconAnchor: [22, 94],
             popupAnchor: [-3, -76],
         });
-        let markers = [];
         for (let i = 0; i < bikeStock.length; i++){
             let lat = bikeStock[i].position.latitude;
             let long = bikeStock[i].position.longitude;

@@ -45,6 +45,7 @@ class Data {
             iconAnchor: [22, 94],
             popupAnchor: [-3, -76],
         });
+        let markers = [];
         for (let i = 0; i < bikeStock.length; i++){
             let lat = bikeStock[i].position.latitude;
             let long = bikeStock[i].position.longitude;
@@ -63,7 +64,6 @@ class Data {
             // $(".leaflet-marker-icon").click(function(){
             //     console.log('here')
             // });
-            let markers = [];
             markers.push(i);
             // { numero: i, name: bikeStock[i].name, adr: bikeStock[i].address }
         }

@@ -7,3 +7,6 @@
 body{
     background: black;
 }
+#flash{
+    display: none;
+}

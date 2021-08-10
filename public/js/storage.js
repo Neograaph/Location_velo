@@ -1,47 +1,44 @@
+console.log('run')
 $(function(){
-  let submitBook = $("#submitBook");
-  submitBook.on("click",function(e){
-    e.preventDefault();
-    down();
-    function down(){
-        let count = 1200;
-        let down = setInterval(timerdown, 1000);
-        function timerdown() {
-          if (count == 0){
-            Stoptimerdown()
-            console.log(count)
-          }
-          else{
-            $('#timer').innerText = count.toString();
-            count--;
-          }
-        }
-        function Stoptimerdown() {
-          clearInterval(down);
-        }
-    };
-  });
-});
+  let time = new Date();
+  console.log(time.toString());
+})
+// tuto date time 
+// https://www.youtube.com/watch?v=-eRsWqwcPuk&ab_channel=dcode
 
-  // deleteStorage.on("click",function(){
-  //   localStorage.clear();
-  //   alert("le local storage est nettoyé !");
-  // });
+// COURS
+// $(function(){
+//   let firstname = $("#firstname");
+//   let save = $("#save");
+//   let deleteStorage = $("#delete");
+//   let showData = $("#save");
+//   let exist = $("#exist");
 
-  // showData.on("click",function(e){
-  //   e.preventDefault();
-  //   let myFirstName = localStorage.getItem("firstname");
-  //   console.log(myFirstName);
-  // });
-  
-  // exist.on("click",function(e){
-  //   e.preventDefault();
-  //   let myFirstName = localStorage.getItem("firstname");
-  //   if(myFirstName){
-  //     localStorage.removeItem("firstname");
-  //   }
-  //   else{
-  //     alert("ce nom n'existe pas ici !");
-  //     return;
-  //   }
-  // });
+//   save.on("click",function(e){
+//     e.preventDefault();
+//     localStorage.setItem('firstname', firstname.val());
+//   });
+
+//   deleteStorage.on("click",function(){
+//     localStorage.clear();
+//     alert("le local storage est nettoyé !");
+//   });
+
+//   showData.on("click",function(e){
+//     e.preventDefault();
+//     let myFirstName = localStorage.getItem("firstname");
+//     console.log(myFirstName);
+//   });
+
+//   exist.on("click",function(e){
+//     e.preventDefault();
+//     let myFirstName = localStorage.getItem("firstname");
+//     if(myFirstName){
+//       localStorage.removeItem("firstname");
+//     }
+//     else{
+//       alert("ce nom n'existe pas ici !");
+//       return;
+//     }
+//   });
+// });

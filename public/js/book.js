@@ -20,9 +20,7 @@ function book(i){
 
 $("#submitBook").click(function() { 
   console.log("réservation enregistrée")
-
   Command: toastr["success"]("Rue de la gare - temps restant 15 min", "Réservation enregistrée")
-
   toastr.options = {
     "closeButton": true,
     "debug": false,

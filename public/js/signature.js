@@ -48,11 +48,26 @@ class signature{
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
   }
 }
+
+document.getElementById('submitBook').addEventListener('click', function() {
+  const blank = isCanvasBlank(document.getElementById('signature'));
+  alert(blank ? 'blank' : 'not blank');
+});
+function isCanvasBlank(canvas) {
+  const context = canvas.getContext('2d');
+
+  const pixelBuffer = new Uint32Array(
+    context.getImageData(0, 0, canvas.width, canvas.height).data.buffer
+  );
+
+  return !pixelBuffer.some(color => color !== 0);
+}
+
 window.onload = () => {
   let canvas = new signature("#signature")
-  let canvasCheck = new signature("#signatureEmpty")
+  // let canvasCheck = new signature("#signatureEmpty")
   // comparer le 2eme canvas pour vérifier qu'une signature est présente ici
-
+  
   document.querySelector("#effacer").addEventListener("click", (e) => {
     e.preventDefault
     canvas.effacer()

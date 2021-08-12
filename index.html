@@ -119,12 +119,11 @@
       <h1>Réserver un vélo</h1>
        <form action="javascript:void('');">
         <label for="name">Nom</label><br>
-        <input type="text" name="name" autocomplete="off" required><br>
-        <label for="name">Prénom</label><br>
-        <input type="text" name="name" autocomplete="off" autofocus required><br>
+        <input id="name" value="" type="text" name="name" autocomplete="off" required><br>
+        <label for="firstName">Prénom</label><br>
+        <input id="firstName" value="" type="text" name="firstName" autocomplete="off" autofocus required><br>
         <label for="canvas">Signature</label><br>
-        <canvas id="signature" width="200" height="200"></canvas>
-        <canvas id="signatureEmpty" width="200" height="200"></canvas><br>
+        <canvas id="signature" width="200" height="200"></canvas><br>
         <a href="javascript:void(0)" id="effacer">Effacer</a><br>
         <p id="adr">Après avoir généré une réservation, vous avez 15 minutes pour vous rendre sur place pour récupérer votre vélo. <br> Dans le cas où les 15 minutes sont écoulées, la réservation est annulée
         </p>

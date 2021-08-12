@@ -44,19 +44,21 @@ class signature{
   }
 };
 // test pour vérifier si le canvas de la signature est vide ou pas
-document.getElementById('submitBook').addEventListener('click', function() {
-  const blank = isCanvasBlank(document.getElementById('signature'));
-  alert(blank ? 'blank' : 'not blank');
-});
+// document.getElementById('submitBook').addEventListener('click', function() {
+//   const blank = isCanvasBlank(document.getElementById('signature'));
+//   // alert(blank ? 'blank' : 'not blank');
+//   // modifier pour afficher un message d'erreur avec  toastr lorsque le canvas est blank
+// });
 function isCanvasBlank(canvas) {
   const context = canvas.getContext('2d');
-
   const pixelBuffer = new Uint32Array(
     context.getImageData(0, 0, canvas.width, canvas.height).data.buffer
   );
 
   return !pixelBuffer.some(color => color !== 0);
 };
+// https://stackoverflow.com/questions/17386707/how-to-check-if-a-canvas-is-blank/17386803
+
 window.onload = () => {
   let canvas = new signature("#signature")
   document.querySelector("#effacer").addEventListener("click", (e) => {

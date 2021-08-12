@@ -1,9 +1,11 @@
-console.log(markers);
+// console.log(markers);
+let adr = null
 // https://www.developpez.net/forums/d545930/javascript/general-javascript/variable-entre-fichiers-java-script/
 
 function book(i){
-  console.log(i);
-
+  // console.log(markers[i]);
+  // console.log(i);
+  adr = markers[i];
   let modal = document.getElementById("bookPopup");
   let span = document.getElementsByClassName("close")[0];
 
@@ -28,7 +30,8 @@ $("#submitBook").click(function() {
     // alert(blank ? 'blank' : 'not blank');
     // modifier pour afficher un message d'erreur avec  toastr lorsque le canvas est blank
   if (blank){
-    console.log("blank")
+    // canvas vide, il manque la signature pour valider la réservation
+    // console.log("blank")
     Command: toastr["error"]("Veuillez signer avant de valider la réservation", "Signature manquante")
     toastr.options = {
       "closeButton": true,
@@ -49,8 +52,11 @@ $("#submitBook").click(function() {
     }
   }
   if (!blank && name != 0 && firstName != 0){
-    console.log("not blank")
-    Command: toastr["success"]("Rue de la gare - temps restant 15 min", "Réservation enregistrée")
+    // toutes les conditions sont ok pour réserver le vélo
+    // console.log("not blank")
+    let maResa = document.getElementById("maResa")
+    maResa.innerHTML = adr + " réservé le: " + "date" + "</br>" +" par: " + firstName + " " + name +  "</br>" + " temps restant sur la reservation: " + "timer"
+    Command: toastr["success"](adr + " - temps restant 15 min", "Réservation enregistrée")
     toastr.options = {
       "closeButton": true,
       "debug": false,

@@ -1,7 +1,7 @@
-console.log('run')
 $(function(){
-  let time = new Date();
-  console.log(time.toString());
+  let dateResa = null;
+  let dateNow = null;
+  console.log("dateResa " + dateResa + " dateNow " + dateNow)
 })
 // tuto date time 
 // https://www.youtube.com/watch?v=-eRsWqwcPuk&ab_channel=dcode

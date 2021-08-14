@@ -9,6 +9,17 @@ class signature{
     this.ctx.strokeStyle = "black"
     this.ctx.lineWidth = 2
     this.canvas.addEventListener("mousedown", (e) => {
+      // e.preventDefault();
+      // e.stopPropagation();
+      // je signe 
+      this.sign = true
+      // je stock mes coordonnées de départ
+      this.prevX = e.clientX - this.canvas.offsetLeft
+      this.prevY = e.clientY - this.canvas.offsetTop
+    });
+    this.canvas.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       // je signe 
       this.sign = true
       // je stock mes coordonnées de départ
@@ -16,6 +27,20 @@ class signature{
       this.prevY = e.clientY - this.canvas.offsetTop
     });
     this.canvas.addEventListener("mousemove", (e) => {
+      // e.preventDefault();
+      // e.stopPropagation();
+      // si je signe 
+      if (this.sign){
+        let currX = e.clientX - this.canvas.offsetLeft
+        let currY = e.clientY - this.canvas.offsetTop
+        this.draw(this.prevX, this.prevY, currX, currY)
+        this.prevX = currX
+        this.prevY = currY
+      };
+    });
+    this.canvas.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       // si je signe 
       if (this.sign){
         let currX = e.clientX - this.canvas.offsetLeft
@@ -29,6 +54,9 @@ class signature{
       this.sign = false
     });
     this.canvas.addEventListener("mouseout", () => {
+      this.sign = false
+    });
+    this.canvas.addEventListener("touchend", () => {
       this.sign = false
     });
   };

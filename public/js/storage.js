@@ -27,6 +27,8 @@ $(function(){
   // écrire les données de la réservation dans la section html
   let maResa = document.getElementById("maResa")
   if (dateResaStorage != null){
+    document.getElementById("name").value = localStorage.getItem('name');
+    document.getElementById("firstName").value = localStorage.getItem('firstName');
     elapsedDate = dateNow - objectDateResa
     // console.log(elapsedDate);
     // Create a new JavaScript Date object based on the timestamp

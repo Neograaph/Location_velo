@@ -40,3 +40,13 @@ cursor: pointer;
 .bookContent>h1{
   color: black;
 }
+
+@media only screen and (max-width: 600px) {
+  .bookPopup{
+    padding-top: 10%;
+  }
+  .bookContent{
+    padding: 1%;
+    width: 95%;
+  }
+}

@@ -1,11 +1,11 @@
 // console.log(markers);
-let adr = null
 // https://www.developpez.net/forums/d545930/javascript/general-javascript/variable-entre-fichiers-java-script/
 
 function book(i){
   // console.log(markers[i]);
   // console.log(i);
   adr = markers[i];
+  localStorage.setItem('adress', adr);
   let modal = document.getElementById("bookPopup");
   let span = document.getElementsByClassName("close")[0];
 
@@ -24,6 +24,8 @@ $("#submitBook").click(function() {
   console.log("requête de réservation");
   let name = document.getElementById("name").value;
   let firstName = document.getElementById("firstName").value;
+  localStorage.setItem('name', name);
+  localStorage.setItem('firstName', firstName);
   console.log(firstName+" "+name);
   const blank = isCanvasBlank(document.getElementById('signature'));
     // alert(blank ? 'blank' : 'not blank');
@@ -57,6 +59,7 @@ $("#submitBook").click(function() {
     console.log("signature ok")
     // creation de la date de la réservation
     dateResa = new Date();
+    localStorage.setItem('dateResa', dateResa);
     console.log(dateResa);
     
     
@@ -80,9 +83,6 @@ $("#submitBook").click(function() {
       "hideMethod": "fadeOut"
     }
     
-    // écrire les données de la résa dans la section html
-    let maResa = document.getElementById("maResa")
-
     // début du timer de la réservation
     const resaTimerStart = 900;
     let timer = resaTimerStart;

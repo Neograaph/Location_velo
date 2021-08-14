@@ -1,10 +1,25 @@
 $(function(){
+  // variables globales utilisés ici et dans book.js
   let dateResa = null;
-  let dateNow = null;
-  console.log("dateResa " + dateResa + " dateNow " + dateNow)
+  let dateNow = new Date();
+  let adr = null;
+  let importName = null;
+  let importFirstName = null;
+  let dateResaStorage = localStorage.getItem('dateResa');
+  let adrStorage = localStorage.getItem('adress');
+  let importNameStorage = localStorage.getItem('name');
+  let importFirstNameStorage = localStorage.getItem('firstName');
+  
+  // écrire les données de la réservation dans la section html
+  let maResa = document.getElementById("maResa")
+  if (dateResaStorage != null){
+    maResa.innerHTML = adrStorage + " réservé le: " + dateResaStorage + "</br>" +" par: " + importFirstNameStorage + " " + importNameStorage +  "</br>" + " temps restant sur la reservation: "
+  }
+  else{
+    maResa.innerHTML = "Aucune reservation actuellement"
+  }
+  // console.log("dateResa " + dateResa + " dateNow " + dateNow)
 })
-// tuto date time 
-// https://www.youtube.com/watch?v=-eRsWqwcPuk&ab_channel=dcode
 
 // COURS
 // $(function(){

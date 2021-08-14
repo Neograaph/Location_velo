@@ -10,20 +10,42 @@ $(function(){
   // let adr = null;
   // let importName = null;
   // let importFirstName = null;
+  let dateyearResaStorage = localStorage.getItem('yearsResa');
+  let datemonthResaStorage = localStorage.getItem('monthResa');
+  let datedayResaStorage = localStorage.getItem('dayResa');
+
   let dateResaStorage = localStorage.getItem('dateResa');
   let dateHoursStorage = localStorage.getItem('hoursResa');
   let dateMinutesStorage = localStorage.getItem('minutesResa');
   let adrStorage = localStorage.getItem('adress');
   let importNameStorage = localStorage.getItem('name');
   let importFirstNameStorage = localStorage.getItem('firstName');
+
+  let objectDateResa = new Date(dateyearResaStorage,datemonthResaStorage,datedayResaStorage,dateHoursStorage,dateMinutesStorage,00);
+  console.log(objectDateResa);
   
   // écrire les données de la réservation dans la section html
   let maResa = document.getElementById("maResa")
   if (dateResaStorage != null){
-    elapsedMinutes = dateNow.getMinutes() - dateMinutesStorage;
-    console.log(dateNow.getMinutes());
-    console.log(dateMinutesStorage);
-    console.log(elapsedMinutes);
+    elapsedDate = dateNow - objectDateResa
+    console.log(elapsedDate);
+    // elapsedDate = dateNow.toLocaleDateString() - dateResaStorage;
+    // elapsedHours = dateNow.getHours() - dateHoursStorage;
+    // elapsedMinutes = dateNow.getMinutes() - dateMinutesStorage;
+
+    // console.log(dateNow.getMinutes());
+    // console.log(dateMinutesStorage);
+    // console.log(elapsedDate + ' ' +elapsedHours + ' ' +elapsedMinutes);
+
+    // if (elapsedDate == NaN){
+    //   // même jour
+
+    // }
+    // else{
+    //   // délai dépassé
+    //   maResa.innerHTML = "Aucune reservation actuellement"
+    // }
+
     maResa.innerHTML = adrStorage + " réservé le: " + dateResaStorage + "</br>" +" par: " + importFirstNameStorage + " " + importNameStorage +  "</br>" + " temps restant sur la reservation: "
   }
   else{

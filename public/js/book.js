@@ -63,6 +63,9 @@ $("#submitBook").click(function() {
     let dateResa = temp.toLocaleDateString();
     let hoursResa = temp.getHours();
     let minutesResa = temp.getMinutes();
+    let yearsResa = temp.getFullYear();
+    let monthResa = temp.getMonth();
+    let dayResa = temp.getDate();
     resumeResa = {
       date: dateResa,
       hours: hoursResa,
@@ -73,6 +76,9 @@ $("#submitBook").click(function() {
     localStorage.setItem('dateResa', dateResa);
     localStorage.setItem('hoursResa', hoursResa);
     localStorage.setItem('minutesResa', minutesResa);
+    localStorage.setItem('yearsResa', yearsResa);
+    localStorage.setItem('monthResa', monthResa);
+    localStorage.setItem('dayResa', dayResa);
   
     // envoyer le popup qui confirme la réservation
     Command: toastr["success"](adr + " - temps restant 15 min", "Réservation enregistrée")
@@ -95,12 +101,12 @@ $("#submitBook").click(function() {
     }
     
     // début du timer de la réservation
-    setInterval(updateTimer(), 1000)
     
     
     const resaTimerStart = 900;
     let timer = resaTimerStart;
     let timerShow = "15:00"
+    setInterval(updateTimer(), 1000)
     
     function updateTimer(){
       const minutes = Math.floor(timer / 60);

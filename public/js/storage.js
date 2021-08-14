@@ -38,7 +38,7 @@ $(function(){
     let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
     let elapsedTime = parseInt(seconds) + parseInt((date.getMinutes() * 60)) + parseInt(((date.getHours() - 1) * 3600));
     localStorage.setItem('elapsedTime', elapsedTime);
-    console.log(formattedTime);
+    // console.log(formattedTime);
     // console.log(elapsedTime);
 
 

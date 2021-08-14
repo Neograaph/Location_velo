@@ -21,12 +21,12 @@ function book(i){
 };
 
 $("#submitBook").click(function() {
-  console.log("requête de réservation");
+  // console.log("requête de réservation");
   let name = document.getElementById("name").value;
   let firstName = document.getElementById("firstName").value;
   localStorage.setItem('name', name);
   localStorage.setItem('firstName', firstName);
-  console.log(firstName+" "+name);
+  // console.log(firstName+" "+name);
   const blank = isCanvasBlank(document.getElementById('signature'));
     // alert(blank ? 'blank' : 'not blank');
     // modifier pour afficher un message d'erreur avec  toastr lorsque le canvas est blank
@@ -56,7 +56,7 @@ $("#submitBook").click(function() {
   }
   if (!blank && name != 0 && firstName != 0){
     // toutes les conditions sont ok pour réserver le vélo
-    console.log("signature ok")
+    // console.log("signature ok")
     // creation de la date de la réservation
     // .toLocaleDateString() + " " + new Date().getHours() + "h " + new Date().getMinutes() + "min";
     let temp = new Date();
@@ -72,7 +72,7 @@ $("#submitBook").click(function() {
       minutes: minutesResa,
     }
     // note: local storage ne prend pas la "var objet" resumeResa (return object object)
-    console.log(resumeResa);
+    // console.log(resumeResa);
     localStorage.setItem('dateResa', dateResa);
     localStorage.setItem('hoursResa', hoursResa);
     localStorage.setItem('minutesResa', minutesResa);
@@ -108,16 +108,24 @@ let timer;
 let timerShow;
 let adrStorage = localStorage.getItem('adress');
 let dateResaStorage = localStorage.getItem('dateResa');
+let dateHoursStorage = localStorage.getItem('hoursResa');
+let dateMinutesStorage = localStorage.getItem('minutesResa');
 let importNameStorage = localStorage.getItem('name');
 let importFirstNameStorage = localStorage.getItem('firstName');
 
 function updateTimer(){
+  adrStorage = localStorage.getItem('adress');
+  dateResaStorage = localStorage.getItem('dateResa');
+  dateHoursStorage = localStorage.getItem('hoursResa');
+  dateMinutesStorage = localStorage.getItem('minutesResa');
+  importNameStorage = localStorage.getItem('name');
+  importFirstNameStorage = localStorage.getItem('firstName');
   const minutes = Math.floor(timer / 60);
   let seconds = timer % 60;
   seconds = seconds < 10 ? '0' + seconds : seconds;
   timerShow = `${minutes}: ${seconds}`;
   // console.log(timerShow)
-  maResa.innerHTML = adrStorage + " réservé le: " + dateResaStorage + "</br>" +" par: " + importFirstNameStorage + " " + importNameStorage +  "</br>" + " temps restant sur la reservation: " + timerShow
+  maResa.innerHTML = adrStorage + " réservé le: " + dateResaStorage + " à: " + dateHoursStorage + "h " + dateMinutesStorage + "min" +"</br>" +" par: " + importFirstNameStorage + " " + importNameStorage +  "</br>" + " temps restant sur la reservation: " + timerShow
   timer--
   // pas de nombre négatif quand timer = 0
   timer = timer < 0 ? 0 : timer

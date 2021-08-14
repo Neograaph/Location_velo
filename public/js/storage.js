@@ -1,11 +1,18 @@
 $(function(){
   // variables globales utilisés ici et dans book.js
-  let dateResa = null;
+  // let dateResa = null;
+  // let hoursResa = null;
+  // let minutesResa = null;
   let dateNow = new Date();
-  let adr = null;
-  let importName = null;
-  let importFirstName = null;
+  let elapsedDate = null;
+  let elapsedHours = null;
+  let elapsedMinutes = null;
+  // let adr = null;
+  // let importName = null;
+  // let importFirstName = null;
   let dateResaStorage = localStorage.getItem('dateResa');
+  let dateHoursStorage = localStorage.getItem('hoursResa');
+  let dateMinutesStorage = localStorage.getItem('minutesResa');
   let adrStorage = localStorage.getItem('adress');
   let importNameStorage = localStorage.getItem('name');
   let importFirstNameStorage = localStorage.getItem('firstName');
@@ -13,6 +20,10 @@ $(function(){
   // écrire les données de la réservation dans la section html
   let maResa = document.getElementById("maResa")
   if (dateResaStorage != null){
+    elapsedMinutes = dateNow.getMinutes() - dateMinutesStorage;
+    console.log(dateNow.getMinutes());
+    console.log(dateMinutesStorage);
+    console.log(elapsedMinutes);
     maResa.innerHTML = adrStorage + " réservé le: " + dateResaStorage + "</br>" +" par: " + importFirstNameStorage + " " + importNameStorage +  "</br>" + " temps restant sur la reservation: "
   }
   else{

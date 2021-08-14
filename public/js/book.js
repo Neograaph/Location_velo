@@ -58,11 +58,22 @@ $("#submitBook").click(function() {
     // toutes les conditions sont ok pour réserver le vélo
     console.log("signature ok")
     // creation de la date de la réservation
-    dateResa = new Date();
+    // .toLocaleDateString() + " " + new Date().getHours() + "h " + new Date().getMinutes() + "min";
+    let temp = new Date();
+    let dateResa = temp.toLocaleDateString();
+    let hoursResa = temp.getHours();
+    let minutesResa = temp.getMinutes();
+    resumeResa = {
+      date: dateResa,
+      hours: hoursResa,
+      minutes: minutesResa,
+    }
+    // note: local storage ne prend pas la "var objet" resumeResa (return object object)
+    console.log(resumeResa);
     localStorage.setItem('dateResa', dateResa);
-    console.log(dateResa);
-    
-    
+    localStorage.setItem('hoursResa', hoursResa);
+    localStorage.setItem('minutesResa', minutesResa);
+  
     // envoyer le popup qui confirme la réservation
     Command: toastr["success"](adr + " - temps restant 15 min", "Réservation enregistrée")
     toastr.options = {
@@ -84,10 +95,12 @@ $("#submitBook").click(function() {
     }
     
     // début du timer de la réservation
+    setInterval(updateTimer(), 1000)
+    
+    
     const resaTimerStart = 900;
     let timer = resaTimerStart;
     let timerShow = "15:00"
-    setInterval(updateTimer, 1000)
     
     function updateTimer(){
       const minutes = Math.floor(timer / 60);

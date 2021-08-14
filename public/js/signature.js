@@ -9,6 +9,7 @@ class signature{
     this.ctx.strokeStyle = "black"
     this.ctx.lineWidth = 2
     this.canvas.addEventListener("mousedown", (e) => {
+      // console.log(e)
       // e.preventDefault();
       // e.stopPropagation();
       // je signe 
@@ -18,13 +19,14 @@ class signature{
       this.prevY = e.clientY - this.canvas.offsetTop
     });
     this.canvas.addEventListener("touchstart", (e) => {
+      // console.log(e)
       e.preventDefault();
       e.stopPropagation();
       // je signe 
       this.sign = true
       // je stock mes coordonnées de départ
-      this.prevX = e.clientX - this.canvas.offsetLeft
-      this.prevY = e.clientY - this.canvas.offsetTop
+      this.prevX = e.targetTouches[0].clientX - this.canvas.offsetLeft
+      this.prevY = e.targetTouches[0].clientY - this.canvas.offsetTop
     });
     this.canvas.addEventListener("mousemove", (e) => {
       // e.preventDefault();
@@ -39,12 +41,13 @@ class signature{
       };
     });
     this.canvas.addEventListener("touchmove", (e) => {
+      // console.log(e)
       e.preventDefault();
       e.stopPropagation();
       // si je signe 
       if (this.sign){
-        let currX = e.clientX - this.canvas.offsetLeft
-        let currY = e.clientY - this.canvas.offsetTop
+        let currX = e.targetTouches[0].clientX - this.canvas.offsetLeft
+        let currY = e.targetTouches[0].clientY - this.canvas.offsetTop
         this.draw(this.prevX, this.prevY, currX, currY)
         this.prevX = currX
         this.prevY = currY
@@ -94,3 +97,7 @@ window.onload = () => {
     canvas.effacer()
   })
 };
+
+// https://stackoverflow.com/questions/43958030/how-can-i-make-canvas-drawing-work-on-mobile
+// http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html
+// https://stackoverflow.com/questions/41993176/determine-touch-position-on-tablets-with-javascript

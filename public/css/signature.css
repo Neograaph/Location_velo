@@ -4,5 +4,5 @@ canvas{
 #signatureEmpty{
   display: none;
 }
-@media(hover: hover){}
-@media(any-pointer: coarse){}
+/* @media(hover: hover){}
+@media(any-pointer: coarse){} */

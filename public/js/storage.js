@@ -22,13 +22,24 @@ $(function(){
   let importFirstNameStorage = localStorage.getItem('firstName');
 
   let objectDateResa = new Date(dateyearResaStorage,datemonthResaStorage,datedayResaStorage,dateHoursStorage,dateMinutesStorage,00);
-  console.log(objectDateResa);
+  // console.log(objectDateResa);
   
   // écrire les données de la réservation dans la section html
   let maResa = document.getElementById("maResa")
   if (dateResaStorage != null){
     elapsedDate = dateNow - objectDateResa
-    console.log(elapsedDate);
+    // console.log(elapsedDate);
+    // Create a new JavaScript Date object based on the timestamp
+    // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+    let date = new Date(elapsedDate);
+    let hours = date.getHours() - 1;
+    let minutes = "0" + date.getMinutes();
+    let seconds = "0" + date.getSeconds();
+    // Will display time in 10:30:23 format
+    let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    console.log(formattedTime);
+
+
     // elapsedDate = dateNow.toLocaleDateString() - dateResaStorage;
     // elapsedHours = dateNow.getHours() - dateHoursStorage;
     // elapsedMinutes = dateNow.getMinutes() - dateMinutesStorage;

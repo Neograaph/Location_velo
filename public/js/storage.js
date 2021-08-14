@@ -36,7 +36,10 @@ $(function(){
     let minutes = "0" + date.getMinutes();
     let seconds = "0" + date.getSeconds();
     let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    let elapsedTime = parseInt(seconds) + parseInt((date.getMinutes() * 60)) + parseInt(((date.getHours() - 1) * 3600));
+    localStorage.setItem('elapsedTime', elapsedTime);
     console.log(formattedTime);
+    // console.log(elapsedTime);
 
 
     // elapsedDate = dateNow.toLocaleDateString() - dateResaStorage;
@@ -56,7 +59,7 @@ $(function(){
     //   maResa.innerHTML = "Aucune reservation actuellement"
     // }
 
-    maResa.innerHTML = adrStorage + " réservé le: " + dateResaStorage + "</br>" +" par: " + importFirstNameStorage + " " + importNameStorage +  "</br>" + " temps restant sur la reservation: "
+    maResa.innerHTML = adrStorage + " réservé le: " + dateResaStorage + "</br>" +" par: " + importFirstNameStorage + " " + importNameStorage +  "</br>" + " temps restant sur la reservation:jamaisssssss affichéééééé "
   }
   else{
     maResa.innerHTML = "Aucune reservation actuellement"

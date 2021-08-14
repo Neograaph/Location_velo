@@ -99,24 +99,48 @@ $("#submitBook").click(function() {
       "showMethod": "fadeIn",
       "hideMethod": "fadeOut"
     }
-    
-    // début du timer de la réservation
-    
-    
-    const resaTimerStart = 900;
-    let timer = resaTimerStart;
-    let timerShow = "15:00"
-    setInterval(updateTimer(), 1000)
-    
-    function updateTimer(){
-      const minutes = Math.floor(timer / 60);
-      let seconds = timer % 60;
-      seconds = seconds < 10 ? '0' + seconds : seconds;
-      timerShow = `${minutes}: ${seconds}`;
-      maResa.innerHTML = adr + " réservé le: " + dateResa + "</br>" +" par: " + firstName + " " + name +  "</br>" + " temps restant sur la reservation: " + timerShow
-      timer--
-      // pas de nombre négatif quand timer = 0
-      timer = timer < 0 ? 0 : timer
-    }
+    setInterval(updateTimer, 1000)
   }
 });
+
+// début du timer de la réservation
+let timer;
+let timerShow;
+let adrStorage = localStorage.getItem('adress');
+let dateResaStorage = localStorage.getItem('dateResa');
+let importNameStorage = localStorage.getItem('name');
+let importFirstNameStorage = localStorage.getItem('firstName');
+
+function updateTimer(){
+  const minutes = Math.floor(timer / 60);
+  let seconds = timer % 60;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+  timerShow = `${minutes}: ${seconds}`;
+  // console.log(timerShow)
+  maResa.innerHTML = adrStorage + " réservé le: " + dateResaStorage + "</br>" +" par: " + importFirstNameStorage + " " + importNameStorage +  "</br>" + " temps restant sur la reservation: " + timerShow
+  timer--
+  // pas de nombre négatif quand timer = 0
+  timer = timer < 0 ? 0 : timer
+}
+
+// Quand retour sur le site => soustraction du temps déjà écoulé
+// let dateResaStorage = localStorage.getItem('dateResa');
+let elapsedTime = localStorage.getItem('elapsedTime');
+if (dateResaStorage != null){
+  if (elapsedTime < 900){
+    timer = 900 - parseInt(elapsedTime);
+    // console.log(typeof(resaTimerStart));
+    setInterval(updateTimer, 1000)
+  }
+}
+else{
+  timer = 900;
+}
+
+// setInterval(function(){
+//   if (elapsedTime < 900){
+//     resaTimerStart = 900 - parseInt(elapsedTime);
+//     console.log(resaTimerStart);
+//     updateTimer();
+//   }
+// },1000);

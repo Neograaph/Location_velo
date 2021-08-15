@@ -7,10 +7,8 @@ class Slider{
         this.slides = document.querySelector('.slides').children;
         this.total = this.slides.length;
         if(this.auto){
-            setTimeout(function(){
-                console.log("ceci est le timeout function il démare au bout de 1,5 secondes");
-            },1500);
-             this.playAuto();
+            setTimeout(function(){},1500);
+            this.playAuto();
         }
         else{
             const controller = new SliderController();
@@ -50,7 +48,6 @@ class Slider{
         if(this.selectedIndex < 0){
             this.selectedIndex = this.total - 1;
         }
-        console.log(this.selectedIndex)
         this.slides[this.selectedIndex].classList.add("active");
     }
     next(){
@@ -69,7 +66,7 @@ class Slider{
         }
         this.slides[this.selectedIndex].classList.add("active");
     }
-}
+};
 class SliderController{
     constructor(){
 		this.prevButton = document.querySelector('.prev');
@@ -77,6 +74,7 @@ class SliderController{
 		this.playButton = document.querySelector(".play");
 		this.pauseButton = document.querySelector('.pause');
         this.initController();
+        this.keyPress();
     }
     initController(){
         this.prevButton.addEventListener("click", function(){
@@ -95,5 +93,15 @@ class SliderController{
     	    slider.next();
         });
     }
-}
+    keyPress(){
+        $(document).on("keyup", "body", function(e) {
+             if (e.keyCode == 37) {
+               slider.prev();
+             }
+             if (e.keyCode == 39) {
+               slider.next();
+             }
+        })
+    }
+};
 const slider = new Slider(false);

@@ -24,7 +24,6 @@ class signature{
       this.prevY = e.targetTouches[0].clientY - this.canvas.offsetTop
     });
     this.canvas.addEventListener("mousemove", (e) => {
-      // si je signe 
       if (this.sign){
         let currX = e.clientX - this.canvas.offsetLeft
         let currY = e.clientY - this.canvas.offsetTop
@@ -36,7 +35,6 @@ class signature{
     this.canvas.addEventListener("touchmove", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      // si je signe 
       if (this.sign){
         let currX = e.targetTouches[0].clientX - this.canvas.offsetLeft
         let currY = e.targetTouches[0].clientY - this.canvas.offsetTop

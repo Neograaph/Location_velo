@@ -184,6 +184,5 @@ function cancelBook() {
 };
 // fin du timer 0: 00 
 if (timerShow === '0: 00'){
-  console.log("endtimer");
   cancelBook();
 };

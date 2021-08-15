@@ -8,7 +8,7 @@ class Data {
         .then(response => this.filterData(response))
         .catch(error => alert("Erreur : " + error));   
     };
-    // fonction pour filtrer la data reçu en fonction d'une condition et push les résultats dans un nouveau tableau
+    // filtrer la data reçu et push dans un nouveau tableau
     filterData(data){
         let dataFiltered = []
         for (let i = 0; i < data.length; i++){
@@ -23,9 +23,6 @@ class Data {
             }
         }
         this.initMap(bikeStock);
-        // console.log(data); // Données brutes
-        // console.log(dataFiltered); // Stations ouvertes seulement 
-        // console.log(bikeStock) // Vélos disponibles
     };
     initMap(bikeStock){
         let map = L.map('map').setView([45.75493922033646,4.84711760117186], 13);
@@ -62,7 +59,6 @@ class Data {
             // ajout des markers sur la carte et dans un tableau
             L.marker([lat, long], {icon: myIcon}).addTo(map).bindPopup("<h3 id='title'>" + name + "</h3> <p>" + address + "</br>" + nbVDispo + "</br></br><button class='bookBtn' id='bookBtn' onclick='book(" + i + ")'>Réserver un vélo</button></p>");
             markers.push(name);
-            // { numero: i, name: bikeStock[i].name, adr: bikeStock[i].address }
         }
     };
 };    
@@ -70,9 +66,3 @@ $(document).ready(function(){
     const dataa = new Data();
     dataa.importApi();
 });
-
-// https://www.youtube.com/watch?v=5ZrYCt2BqSU&ab_channel=GeoDev
-// https://leafletjs.com/reference-1.7.1.html#icon
-
-// problème de taille de la map
-// https://github.com/Leaflet/Leaflet/issues/3002

@@ -1,0 +1,20 @@
+/* ajouter des polices */
+#map{
+    z-index: 1;
+    height: 600px;
+    /* width: 600px; */
+}
+body{
+    background: black;
+}
+#flash{
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    #map{
+        width: 90vw;
+    }
+    #mapSupMobile{
+        width: 93vw;
+    }
+}

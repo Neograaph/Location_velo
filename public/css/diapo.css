@@ -1,0 +1,52 @@
+.slider
+{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides
+{
+    width: 100%;
+    justify-content: center;
+}
+
+.slider .slides .item
+{
+    display: none;
+    position: relative;
+}
+.slider .slides .item.active
+{
+    display: block;
+    position: relative;
+}
+.slider .slides .item img
+{
+    max-width: 100%;
+    display: block;
+    animation: fade 2s;
+}
+
+@keyframes fade 
+{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.item{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.textItem{
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+@media only screen and (max-width: 636px) {
+    .icons{
+        padding: 10px !important;
+    }
+  }

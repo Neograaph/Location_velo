@@ -1,0 +1,8 @@
+canvas{
+  border:  1px solid black;
+}
+#signatureEmpty{
+  display: none;
+}
+/* @media(hover: hover){}
+@media(any-pointer: coarse){} */

@@ -1,0 +1,37 @@
+.slider
+{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides
+{
+    width: 100%;
+    justify-content: center;
+}
+
+.slider .slides .item
+{
+    display: none;
+    position: relative;
+}
+.slider .slides .item.active
+{
+    display: block;
+    position: relative;
+}
+.slider .slides .item img
+{
+    max-width: 100%;
+    display: block;
+    /* animation: zoom 2s ease; */
+}
+
+/* @keyframes zoom 
+{
+    0%{transform: scale(2);opacity: 0;}
+    50%{transform: scale(2);}
+    75%{transform: scale(1);}
+    100%{transform: scale(1);opacity: 1;}
+} */

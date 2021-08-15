@@ -40,6 +40,9 @@ cursor: pointer;
 .bookContent>h1{
   color: black;
 }
+#resaSection{
+  text-align: center;
+}
 
 @media only screen and (max-width: 600px) {
   .bookPopup{

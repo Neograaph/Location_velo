@@ -9,13 +9,15 @@
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.css'/>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-  <link rel="stylesheet" href="./public/css/loader.css">
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css'/>
+  <!-- <link rel="stylesheet" href="./public/css/loader.css"> -->
   <link rel="stylesheet" href="./public/css/map.css">
   <link rel="stylesheet" href="./public/css/book.css">
   <link rel="stylesheet" href="./public/css/signature.css">
-  <link rel="stylesheet" href="./public/css/sliceDemo.css">
-  <link rel="stylesheet" href="./public/css/sliceBox.css">
-  <link rel="stylesheet" href="./public/css/customSlice.css">
+  <link rel="stylesheet" href="./public/css/diapo.css">
+  <!-- <link rel="stylesheet" href="./public/css/sliceDemo.css"> -->
+  <!-- <link rel="stylesheet" href="./public/css/sliceBox.css"> -->
+  <!-- <link rel="stylesheet" href="./public/css/customSlice.css"> -->
   <link rel="stylesheet" href="./public/css/footer.css">
   <link rel="stylesheet" href="./public/css/header.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
@@ -25,17 +27,20 @@
     <img src="./public/img/Logo.png" alt="logo">
   </header>
   <!-- au chargement de la page -->
-  <section>
+  <!-- <section>
     <div class="loader" id="loader" >
       <p class="mt-5 pt-5 display-1">chargement</p>
-      <!-- <img src="./public/img/loader.gif" alt=""> -->
     </div>
-  </section>
+  </section> -->
 
-  <!-- diaporama -->
-  <section>
+  <!-- diaporama 3D-->
+  <!-- <section>
     <div class="container">
 			<div class="wrapper">
+        <div class="text-center">
+          <button id="breakDiapo">Pause</button>
+          <button id="autoDiapo">Auto</button>
+        </div>
 				<ul id="sb-slider" class="sb-slider">
 					<li>
 						<a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank"><img src="./public/img/img1.jpg" alt="image1"/></a>
@@ -97,8 +102,35 @@
 					<span></span>
 					<span></span>
 				</div>
-			</div><!-- /wrapper -->
+			</div> /wrapper
 		</div>
+  </section> -->
+
+  <!-- diaporama -->
+  <section id="slider-container">
+    <div class="container-fluid slider">
+        <div class="col-md-12 slides d-flex" >
+            <div class="item active">
+                <img  src="./public/img/img1.jpg" alt="">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, recusandae?</p>
+            </div>
+            <div class="item">
+                <img  src="./public/img/img2.jpg" alt="">
+            </div>
+            <div class="item">
+                <img  src="./public/img/img1.jpg" alt="">
+            </div>
+            <div class="item">
+                <img  src="./public/img/img2.jpg" alt="">
+            </div>
+        </div>
+    </div>
+        <div class="col-md-6 control d-flex justify-content-around my-5 m-auto">
+            <button class="prev px-5"><span class="fas fa-chevron-left fa-2x"></span></button> 
+            <button class="play px-5"><span class="fas fa-play fa-2x"></span></button> 
+            <button class="pause px-5"><span class="fas fa-pause fa-2x "></span></button>
+            <button class="next px-5"><span class="fas fa-chevron-right fa-2x"></span></button> 
+        </div>
   </section>
 
   <!-- section pour afficher la map -->
@@ -134,11 +166,11 @@
   </section>
 
   <!-- popup avec timer quand un vélo est réservé -->
-  <section>
+  <section><br>
     <!-- <div id="timer"></div> -->
     <div class="container" id="resaSection">
       <h1>Ma reservation:</h1>
-      <div id="maResa">resa here</div>
+      <div id="maResa">resa here</div><br>
       <button id="cancelBook" onclick="cancelBook()">Annuler ma reservation</button>
     </div>
   </section>
@@ -156,11 +188,12 @@
   <script src="./public/js/storage.js"></script>
   <script src="./public/js/map.js"></script>
   <script src="./public/js/signature.js"></script>
-  <script src="./public/js/loader.js"></script>
   <script src="./public/js/book.js"></script>
-  <script src="./public/js/anim.js"></script>
-  <script src="./public/js/slice.js"></script>
-  <script src="./public/js/initSlice.js"></script>
+  <script src="./public/js/diapo.js"></script>
+  <!-- <script src="./public/js/loader.js"></script> -->
+  <!-- <script src="./public/js/anim.js"></script> -->
+  <!-- <script src="./public/js/slice.js"></script> -->
+  <!-- <script src="./public/js/initSlice.js"></script> -->
 
 </body>
 </html>

@@ -12,9 +12,17 @@ body{
 }
 @media only screen and (max-width: 600px) {
     #map{
-        width: 97vw;
+        width: 90vw;
     }
     #mapSupMobile{
-        width: 100vw;
+        width: 93vw;
     }
 }
+/* @media only screen and (max-width: 600px) {
+    #map{
+        width: 101vw;
+    }
+    #mapSupMobile{
+        width: 104vw;
+    }
+} */

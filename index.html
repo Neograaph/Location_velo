@@ -1,53 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Location de vélo</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.css'/>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.css' />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css'/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
   <link rel="stylesheet" href="./public/css/map.css">
   <link rel="stylesheet" href="./public/css/book.css">
   <link rel="stylesheet" href="./public/css/signature.css">
   <link rel="stylesheet" href="./public/css/diapo.css">
   <link rel="stylesheet" href="./public/css/footer.css">
   <link rel="stylesheet" href="./public/css/header.css">
+  <link rel="stylesheet" href="./public/css/style.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
 </head>
+
 <body>
   <header>
-    <img src="./public/img/Logo.png" alt="logo">
+    <section class="mb-3">
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <!-- debut logo -->
+          <div class="image">
+            <img src="./public/img/Logo.png" alt="Logo" class="rounded mx-auto d-block logo">
+          </div>
+          <!-- fin du logo -->
+          <!-- debut du menu buger  -->
+          <button class="navbar-toggler second-button" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#navbarToggleExternalContent10" aria-controls="navbarToggleExternalContent10"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
+          </button>
+          <!-- debut de la recherche -->
+          <div class="px-5">
+            <div class="search-box">
+              <input type="text" placeholder=" " /><span></span>
+            </div>
+          </div>
+          <!-- fin de la recherche -->
+        </div>
+      </nav>
+      <div class="collapse" id="navbarToggleExternalContent10">
+        <div class="bg-light shadow-3 p-4">
+          <button class="btn btn-link btn-block border-bottom m-0">Réservation</button>
+          <button class="btn btn-link btn-block border-bottom m-0">FAQ</button>
+          <button class="btn btn-link btn-block m-0">Nous contacter </button>
+        </div>
+      </div>
+      <!-- fin du menu burger  -->
   </header>
   <!-- Diaporama -->
   <section id="slider-container">
     <div class="container-md slider">
-      <div class="slides d-flex" >
+      <div class="slides d-flex">
         <div class="item active">
-          <img  src="./public/img/img1.jpg" alt="">
-          <p class="textItem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, recusandae?</p>
+          <img src="./public/img/img1.jpg" alt="">
+          <p class="textItem">Bonjour, nous vous remercions d'utiliser Bike Company.</p>
         </div>
         <div class="item">
-          <img  src="./public/img/img2.jpg" alt="">
-          <p class="textItem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, recusandae?</p>
+          <img src="./public/img/img2.jpg" alt="">
+          <p class="textItem">Nous sommes une petite équipe qui met à votre service ses compétences pour vous faciliter la vie.</p>
         </div>
         <div class="item">
-          <img  src="./public/img/img3.jpg" alt="">
-          <p class="textItem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, recusandae?</p>
+          <img src="./public/img/img3.jpg" alt="">
+          <p class="textItem">Lyon est une première étape ! Dans quelques coups de pédales, nous pourrons faire profiter d'autres villes de nos installations.</p>
         </div>
         <div class="item">
-          <img  src="./public/img/img4.jpg" alt="">
-          <p class="textItem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, recusandae?</p>
+          <img src="./public/img/img4.jpg" alt="">
+          <p class="textItem">Le site sera amené à évoluer et nous ajouterons des fonctionnalités qui, nous espérons, vous plairont. Bikement vôtre.</p>
         </div>
       </div>
     </div>
     <div class="col-md-6 control d-flex justify-content-around my-5 m-auto">
-        <button class="prev px-5 icons"><span class="fas fa-chevron-left fa-2x"></span></button> 
-        <button class="play px-5 icons"><span class="fas fa-play fa-2x"></span></button> 
-        <button class="pause px-5 icons"><span class="fas fa-pause fa-2x "></span></button>
-        <button class="next px-5 icons"><span class="fas fa-chevron-right fa-2x"></span></button> 
+      <button class="prev px-5 icons"><span class="fas fa-chevron-left fa-2x"></span></button>
+      <button class="play px-5 icons"><span class="fas fa-play fa-2x"></span></button>
+      <button class="pause px-5 icons"><span class="fas fa-pause fa-2x "></span></button>
+      <button class="next px-5 icons"><span class="fas fa-chevron-right fa-2x"></span></button>
     </div>
   </section>
 
@@ -62,24 +96,25 @@
 
   <!-- Popup pour réserver un vélo -->
   <section>
-  <div class="bookPopup" id="bookPopup">
-    <div class="bookContent">
-      <span class="close">&times;</span>
-      <h1>Réserver un vélo</h1>
-       <form action="javascript:void('');">
-        <label for="name">Nom</label><br>
-        <input id="name" value="" type="text" name="name" autocomplete="off" required><br>
-        <label for="firstName">Prénom</label><br>
-        <input id="firstName" value="" type="text" name="firstName" autocomplete="off" autofocus required><br>
-        <label for="canvas">Signature</label><br>
-        <canvas id="signature" width="200" height="200"></canvas><br>
-        <a href="javascript:void(0)" id="effacer">Effacer</a><br>
-        <p id="adr">Après avoir généré une réservation, vous avez 15 minutes pour vous rendre sur place pour récupérer votre vélo. <br> Dans le cas où les 15 minutes sont écoulées, la réservation est annulée
-        </p>
-        <input type="submit" value="Générer ma réservation" id="submitBook"></input>
-      </form>
+    <div class="bookPopup" id="bookPopup">
+      <div class="bookContent">
+        <span class="close">&times;</span>
+        <h1>Réserver un vélo</h1>
+        <form action="javascript:void('');">
+          <label for="name">Nom</label><br>
+          <input id="name" value="" type="text" name="name" autocomplete="off" required><br>
+          <label for="firstName">Prénom</label><br>
+          <input id="firstName" value="" type="text" name="firstName" autocomplete="off" autofocus required><br>
+          <label for="canvas">Signature</label><br>
+          <canvas id="signature" width="200" height="200"></canvas><br>
+          <a href="javascript:void(0)" id="effacer">Effacer</a><br>
+          <p id="adr">Après avoir généré une réservation, vous avez 15 minutes pour vous rendre sur place pour récupérer
+            votre vélo. <br> Dans le cas où les 15 minutes sont écoulées, la réservation est annulée
+          </p>
+          <input type="submit" value="Générer ma réservation" id="submitBook"></input>
+        </form>
+      </div>
     </div>
-  </div>
   </section>
 
   <!-- Popup avec timer quand un vélo est réservé -->
@@ -91,9 +126,16 @@
     </div>
   </section>
 
-
   <footer>
     <img src="./public/img/Logo.png" alt="logo">
+    <div class="social-media">
+      <h3>M.Hardy Arthur</h3>
+      <p><a class="fab fa-linkedin-in", href="https://www.linkedin.com/in/arthur-hardy-48480217b/"></a></p>
+    </div>
+    <div class="social-media">  
+      <h3>M.Gauthier Maxime</h3>
+    <p><a class="fab fa-linkedin-in", href="https://www.linkedin.com/in/maxime-gauthier45/"></a></p>
+    </div>
     <p>
       © 2021 Arthur Hardy & Maxime Gauthier. All Rights Reserved.
     </p>
@@ -101,10 +143,12 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
   <script src="./public/js/storage.js"></script>
   <script src="./public/js/map.js"></script>
   <script src="./public/js/signature.js"></script>
   <script src="./public/js/book.js"></script>
   <script src="./public/js/diapo.js"></script>
+  <script src="./public/js/scripthtml.js"></script>
 </body>
 </html>

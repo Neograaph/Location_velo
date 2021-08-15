@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../V.Bike/CSS/Style.css">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ 
+  $("a").on('click', function(event) {
+
+    
+    if (this.hash !== "") {
+    
+      event.preventDefault();
+
+     
+      var hash = this.hash;
+
+      
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+     
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+</script>
+<style>
+#section1 {
+  height: 600px;
+  background-color: pink;
+}
+
+#section2 {
+  height: 600px;
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+    <header>
+  <!--Second button-->
+  <section class="mb-3">
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <!-- debut logo -->
+        <div class="image">
+          <img src="Logo/Logo_3.PNG" alt="Logo" class="rounded mx-auto d-block logo">
+      </div>
+      <!-- fin du logo -->
+      <!-- debut du menu buger  -->
+        <button class="navbar-toggler second-button" type="button" data-mdb-toggle="collapse"
+          data-mdb-target="#navbarToggleExternalContent10"
+          aria-controls="navbarToggleExternalContent10" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
+        </button>
+        <!-- debut de la recherche -->
+        <div class="px-5">
+          <div class="search-box">
+            <input type="text" placeholder=" "/><span></span>
+          </div>
+        </div>
+        <!-- fin de la recherche -->
+      </div>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent10">
+      <div class="bg-light shadow-3 p-4">
+        <button class="btn btn-link btn-block border-bottom m-0">Réservation</button>
+        <button class="btn btn-link btn-block border-bottom m-0">FAQ</button>
+        <button class="btn btn-link btn-block m-0">Nous contacter </button>
+      </div>
+      <!-- fin du menu burger  -->
+    </div>
+  </section>
+    </header>
+    <!--présentation-->
+    <div class="présentation"
+      <p>Bonjour, nous vous remercions d'utiliser Bike Company.</p>
+      <p>Nous sommes une petite équipe qui met à votre service ses compétences pour vous faciliter la vie.</p>
+     <p>Lyon est une première étape ! Dans quelques coups de pédales, nous pourrons faire profiter d'autres villes de nos installations.</p>
+     <p>Le site sera amené à évoluer et nous ajouterons des fonctionnalités qui, nous espérons, vous plairont.</p>
+     <p>Bikement vôtre.</p>
+    </div>  
+    <!--pied de page-->
+<footer>
+  <div class="social-media">  
+    <h3>M.Gauthier Maxime</h3>
+  <p><a class="fab fa-linkedin-in", href="https://www.linkedin.com/in/maxime-gauthier45/"></a></p>
+</div>
+<p class="copy">© 2021 Arthur Hardy & Maxime Gauthier. All Rights Reserved.</p>
+  <div class="social-media">
+    <h3>M.Hardy Arthur</h3>
+    <p><a class="fab fa-linkedin-in", href="https://www.linkedin.com/in/arthur-hardy-48480217b/"></a></p>
+  </div>
+</footer>
+<!--fin du pied de page-->
+
+    <script src="JS/Script.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+</body>
+</html>

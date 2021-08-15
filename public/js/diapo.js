@@ -94,7 +94,7 @@ class Slider
 
     next()
     {
-        console.log("next");
+        // console.log("next");
         // exercise  terminer cette function afin que le slider passe à l'image suivante puis arriver au bout revienne à zéro
         clearInterval(this.time);
 
@@ -111,7 +111,7 @@ class Slider
         if(this.selectedIndex < 0){
             this.selectedIndex = this.total - 1;
         }
-        console.log(this.selectedIndex)
+        // console.log(this.selectedIndex)
         this.slides[this.selectedIndex].classList.add("active");
     }
 }

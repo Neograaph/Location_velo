@@ -3,15 +3,11 @@ class signature{
     this.sign = false
     this.prevX = 0
     this.prevY = 0
-
     this.canvas = document.querySelector(canvas)
     this.ctx = this.canvas.getContext("2d")
     this.ctx.strokeStyle = "black"
     this.ctx.lineWidth = 2
     this.canvas.addEventListener("mousedown", (e) => {
-      // console.log(e)
-      // e.preventDefault();
-      // e.stopPropagation();
       // je signe 
       this.sign = true
       // je stock mes coordonnées de départ
@@ -19,7 +15,6 @@ class signature{
       this.prevY = e.clientY - this.canvas.offsetTop
     });
     this.canvas.addEventListener("touchstart", (e) => {
-      // console.log(e)
       e.preventDefault();
       e.stopPropagation();
       // je signe 
@@ -29,8 +24,6 @@ class signature{
       this.prevY = e.targetTouches[0].clientY - this.canvas.offsetTop
     });
     this.canvas.addEventListener("mousemove", (e) => {
-      // e.preventDefault();
-      // e.stopPropagation();
       // si je signe 
       if (this.sign){
         let currX = e.clientX - this.canvas.offsetLeft
@@ -41,7 +34,6 @@ class signature{
       };
     });
     this.canvas.addEventListener("touchmove", (e) => {
-      // console.log(e)
       e.preventDefault();
       e.stopPropagation();
       // si je signe 
@@ -75,20 +67,13 @@ class signature{
   }
 };
 // test pour vérifier si le canvas de la signature est vide ou pas
-// document.getElementById('submitBook').addEventListener('click', function() {
-//   const blank = isCanvasBlank(document.getElementById('signature'));
-//   // alert(blank ? 'blank' : 'not blank');
-//   // modifier pour afficher un message d'erreur avec  toastr lorsque le canvas est blank
-// });
 function isCanvasBlank(canvas) {
   const context = canvas.getContext('2d');
   const pixelBuffer = new Uint32Array(
     context.getImageData(0, 0, canvas.width, canvas.height).data.buffer
   );
-
   return !pixelBuffer.some(color => color !== 0);
 };
-// https://stackoverflow.com/questions/17386707/how-to-check-if-a-canvas-is-blank/17386803
 
 window.onload = () => {
   let canvas = new signature("#signature")
@@ -97,7 +82,3 @@ window.onload = () => {
     canvas.effacer()
   })
 };
-
-// https://stackoverflow.com/questions/43958030/how-can-i-make-canvas-drawing-work-on-mobile
-// http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html
-// https://stackoverflow.com/questions/41993176/determine-touch-position-on-tablets-with-javascript

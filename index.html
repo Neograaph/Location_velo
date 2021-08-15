@@ -15,22 +15,19 @@
   <link rel="stylesheet" href="./public/css/book.css">
   <link rel="stylesheet" href="./public/css/signature.css">
   <link rel="stylesheet" href="./public/css/diapo.css">
-  <link rel="stylesheet" href="./public/css/footer.css">
-  <link rel="stylesheet" href="./public/css/header.css">
   <link rel="stylesheet" href="./public/css/style.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
 </head>
 
 <body>
   <header>
-    <section class="mb-3">
+    <section class="container-md mb-3">
+      <!-- debut logo -->
+      <div class="image">
+        <img src="./public/img/Logo.png" alt="Logo" class="rounded mx-auto d-block logo">
+      </div>
       <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-          <!-- debut logo -->
-          <div class="image">
-            <img src="./public/img/Logo.png" alt="Logo" class="rounded mx-auto d-block logo">
-          </div>
-          <!-- fin du logo -->
+        <div class="container-fluid menuResponsive">
           <!-- debut du menu buger  -->
           <button class="navbar-toggler second-button" type="button" data-mdb-toggle="collapse"
             data-mdb-target="#navbarToggleExternalContent10" aria-controls="navbarToggleExternalContent10"
@@ -40,18 +37,18 @@
           <!-- debut de la recherche -->
           <div class="px-5">
             <div class="search-box">
-              <input type="text" placeholder=" " /><span></span>
+              <input type="text" placeholder="fonction en développement" /><span></span>
             </div>
           </div>
           <!-- fin de la recherche -->
         </div>
       </nav>
       <div class="collapse" id="navbarToggleExternalContent10">
-        <div class="bg-light shadow-3 p-4">
-          <button class="btn btn-link btn-block border-bottom m-0">Réservation</button>
-          <button class="btn btn-link btn-block border-bottom m-0">FAQ</button>
-          <button class="btn btn-link btn-block m-0">Nous contacter </button>
-        </div>
+        <div class="bg-dark shadow-3 p-4">
+          <a href="#main"><button class="btn text-success btn-link btn-block border-bottom m-0">Réservation</button></a>
+          <a href="https://github.com/Neograaph/Location_velo" target="_blank"><button class="btn text-success btn-link btn-block border-bottom m-0">GitHub du projet</button></a>
+          <a href="#footer"><button class="btn text-success btn-link btn-block m-0">Nous contacter </button>
+        </div></a>
       </div>
       <!-- fin du menu burger  -->
   </header>
@@ -126,17 +123,19 @@
     </div>
   </section>
 
-  <footer>
+  <footer id="footer">
     <img src="./public/img/Logo.png" alt="logo">
-    <div class="social-media">
-      <h3>M.Hardy Arthur</h3>
-      <p><a class="fab fa-linkedin-in", href="https://www.linkedin.com/in/arthur-hardy-48480217b/"></a></p>
+    <div class="container-md rs">
+      <div class="social-media">
+        <h3>M.Hardy Arthur</h3>
+        <p><a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/arthur-hardy-48480217b/" target="_blank"></a></p>
+      </div>
+      <div class="social-media">  
+        <h3>M.Gauthier Maxime</h3>
+        <p><a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/maxime-gauthier45/" target="_blank"></a></p>
+      </div>
     </div>
-    <div class="social-media">  
-      <h3>M.Gauthier Maxime</h3>
-    <p><a class="fab fa-linkedin-in", href="https://www.linkedin.com/in/maxime-gauthier45/"></a></p>
-    </div>
-    <p>
+    <p class="rightsReserved">
       © 2021 Arthur Hardy & Maxime Gauthier. All Rights Reserved.
     </p>
   </footer>

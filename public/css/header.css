@@ -1,7 +1,0 @@
-header{
-  display: flex;
-  justify-content: center;
-}
-header>img{
-  max-height: 30vh;
-}

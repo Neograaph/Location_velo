@@ -176,6 +176,18 @@ top: 21px;
 left: 8px;
 }
 
+@media only screen and (max-width: 636px) {
+  .menuResponsive{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .px-5{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+
 /* Fin du Header */
 .body{
     background-color: #262626;
@@ -289,5 +301,35 @@ footer .social-media p{
   width: 40px;
   cursor: pointer;
 
+}
+.rs{
+  display: flex;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 636px) {
+  .rs{
+    flex-direction: column;
+  }
+  footer .social-media p{
+    margin-right: 0;
+  }
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer>img{
+  max-height: 50vh;
+  max-width: 50%;
+  text-align: center;
+}
+footer>p{
+  color: white;
+}
+.rightsReserved{
+  text-align: center;
 }
 /*fin du pied de Pied de page*/

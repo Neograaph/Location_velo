@@ -5,19 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Location de vélo</title>
-   <!-- <link rel="shortcut icon" href="#">  corrige "favicon.ico error" dans la console -->
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.css'/>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css'/>
-  <!-- <link rel="stylesheet" href="./public/css/loader.css"> -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.css'/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css'/>
   <link rel="stylesheet" href="./public/css/map.css">
   <link rel="stylesheet" href="./public/css/book.css">
   <link rel="stylesheet" href="./public/css/signature.css">
   <link rel="stylesheet" href="./public/css/diapo.css">
-  <!-- <link rel="stylesheet" href="./public/css/sliceDemo.css"> -->
-  <!-- <link rel="stylesheet" href="./public/css/sliceBox.css"> -->
-  <!-- <link rel="stylesheet" href="./public/css/customSlice.css"> -->
   <link rel="stylesheet" href="./public/css/footer.css">
   <link rel="stylesheet" href="./public/css/header.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
@@ -26,87 +21,7 @@
   <header>
     <img src="./public/img/Logo.png" alt="logo">
   </header>
-  <!-- au chargement de la page -->
-  <!-- <section>
-    <div class="loader" id="loader" >
-      <p class="mt-5 pt-5 display-1">chargement</p>
-    </div>
-  </section> -->
-
-  <!-- diaporama 3D-->
-  <!-- <section>
-    <div class="container">
-			<div class="wrapper">
-        <div class="text-center">
-          <button id="breakDiapo">Pause</button>
-          <button id="autoDiapo">Auto</button>
-        </div>
-				<ul id="sb-slider" class="sb-slider">
-					<li>
-						<a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank"><img src="./public/img/img1.jpg" alt="image1"/></a>
-						<div class="sb-description">
-							<h3>Explication du site</h3>
-						</div>
-					</li>
-					<li>
-						<a href="http://www.flickr.com/photos/strupler/2968268187" target="_blank"><img src="./public/img/img2.jpg" alt="image2"/></a>
-						<div class="sb-description">
-							<h3>Comment réserver</h3>
-						</div>
-					</li>
-					<li>
-						<a href="http://www.flickr.com/photos/strupler/2968114825" target="_blank"><img src="./public/img/img1.jpg" alt="image3"/></a>
-						<div class="sb-description">
-							<h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium sequi assumenda saepe praesentium rem quam numquam facere voluptas! Est aliquid fugiat neque alias explicabo eius commodi cum placeat quisquam libero?</h3>
-						</div>
-					</li>
-					<li>
-						<a href="http://www.flickr.com/photos/strupler/2968122059" target="_blank"><img src="./public/img/img2.jpg" alt="image4"/></a>
-						<div class="sb-description">
-							<h3>reservation expire au bout de 20 min</h3>
-						</div>
-					</li>
-					<li>
-						<a href="http://www.flickr.com/photos/strupler/2969119944" target="_blank"><img src="./public/img/img1.jpg" alt="image5"/></a>
-						<div class="sb-description">
-							<h3>Commentaires image 5</h3>
-						</div>
-					</li>
-					<li>
-						<a href="http://www.flickr.com/photos/strupler/2968126177" target="_blank"><img src="./public/img/img2.jpg" alt="image6"/></a>
-						<div class="sb-description">
-							<h3>Commentaires image 6</h3>
-						</div>
-					</li>
-					<li>
-						<a href="http://www.flickr.com/photos/strupler/2968945158" target="_blank"><img src="./public/img/img1.jpg" alt="image7"/></a>
-						<div class="sb-description">
-							<h3>Commentaires image 7</h3>
-						</div>
-					</li>
-				</ul>
-
-				<div id="shadow" class="shadow"></div>
-
-				<div id="nav-arrows" class="nav-arrows">
-					<a href="#">suivante</a>
-					<a href="#">précédente</a>
-				</div>
-
-				<div id="nav-dots" class="nav-dots">
-					<span class="nav-dot-current"></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</div> /wrapper
-		</div>
-  </section> -->
-
-  <!-- diaporama -->
+  <!-- Diaporama -->
   <section id="slider-container">
     <div class="container-md slider">
       <div class="slides d-flex" >
@@ -136,7 +51,7 @@
     </div>
   </section>
 
-  <!-- section pour afficher la map -->
+  <!-- Afficher la map -->
   <section id="main">
     <div class="container-md">
       <div id="mapSupMobile" class="col-md-12 bg-light text-center p-1">
@@ -146,7 +61,7 @@
     </div>
   </section>
 
-  <!-- popup pour réserver un vélo -->
+  <!-- Popup pour réserver un vélo -->
   <section>
   <div class="bookPopup" id="bookPopup">
     <div class="bookContent">
@@ -168,7 +83,7 @@
   </div>
   </section>
 
-  <!-- popup avec timer quand un vélo est réservé -->
+  <!-- Popup avec timer quand un vélo est réservé -->
   <section><br>
     <!-- <div id="timer"></div> -->
     <div class="container" id="resaSection">
@@ -193,10 +108,5 @@
   <script src="./public/js/signature.js"></script>
   <script src="./public/js/book.js"></script>
   <script src="./public/js/diapo.js"></script>
-  <!-- <script src="./public/js/loader.js"></script> -->
-  <!-- <script src="./public/js/anim.js"></script> -->
-  <!-- <script src="./public/js/slice.js"></script> -->
-  <!-- <script src="./public/js/initSlice.js"></script> -->
-
 </body>
 </html>

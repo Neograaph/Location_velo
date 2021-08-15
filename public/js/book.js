@@ -1,9 +1,4 @@
-// console.log(markers);
-// https://www.developpez.net/forums/d545930/javascript/general-javascript/variable-entre-fichiers-java-script/
-
 function book(i){
-  // console.log(markers[i]);
-  // console.log(i);
   adr = markers[i];
   localStorage.setItem('adress', adr);
   let modal = document.getElementById("bookPopup");
@@ -32,19 +27,14 @@ $("#submitBook").click(function() {
   localStorage.removeItem("monthResa");
   localStorage.removeItem("hoursResa");
   timer = 900;
-  // console.log("requête de réservation");
   let name = document.getElementById("name").value;
   let firstName = document.getElementById("firstName").value;
   localStorage.setItem('name', name);
   localStorage.setItem('firstName', firstName);
-  // console.log(firstName+" "+name);
   const blank = isCanvasBlank(document.getElementById('signature'));
-    // alert(blank ? 'blank' : 'not blank');
-    // modifier pour afficher un message d'erreur avec  toastr lorsque le canvas est blank
+
   if (blank){
     // canvas vide, il manque la signature pour valider la réservation
-    // console.log("signature manquante")
-    
     // popup signature manquante
     Command: toastr["error"]("Veuillez signer avant de valider la réservation", "Signature manquante")
     toastr.options = {
@@ -67,9 +57,6 @@ $("#submitBook").click(function() {
   }
   if (!blank && name != 0 && firstName != 0){
     // toutes les conditions sont ok pour réserver le vélo
-    // console.log("signature ok")
-    // creation de la date de la réservation
-    // .toLocaleDateString() + " " + new Date().getHours() + "h " + new Date().getMinutes() + "min";
     document.getElementById("resaSection").style.display = "block";
     let temp = new Date();
     let dateResa = temp.toLocaleDateString();
@@ -84,7 +71,6 @@ $("#submitBook").click(function() {
       minutes: minutesResa,
     }
     // note: local storage ne prend pas la "var objet" resumeResa (return object object)
-    // console.log(resumeResa);
     localStorage.setItem('dateResa', dateResa);
     localStorage.setItem('hoursResa', hoursResa);
     localStorage.setItem('minutesResa', minutesResa);
@@ -138,7 +124,6 @@ function updateTimer(){
   let seconds = timer % 60;
   seconds = seconds < 10 ? '0' + seconds : seconds;
   timerShow = `${minutes}: ${seconds}`;
-  // console.log(timerShow)
   maResa.innerHTML = adrStorage + " réservé le: " + dateResaStorage + " à: " + dateHoursStorage + "h " + dateMinutesStorage + "min" +"</br>" +" Par: " + importFirstNameStorage + " " + importNameStorage +  "</br>" + " Temps restant sur la reservation: " + timerShow
   timer--
   // pas de nombre négatif quand timer = 0
@@ -146,13 +131,10 @@ function updateTimer(){
 }
 
 // Quand retour sur le site => soustraction du temps déjà écoulé
-// let dateResaStorage = localStorage.getItem('dateResa');
 let elapsedTime = localStorage.getItem('elapsedTime');
-// let timerBack;
 if (dateResaStorage != null){
   if (elapsedTime < 900){
     timer = 900 - parseInt(elapsedTime);
-    // console.log(typeof(resaTimerStart));
     window.timerBack = setInterval(updateTimer, 1000)
   }
 }
@@ -200,7 +182,6 @@ function cancelBook() {
     "hideMethod": "fadeOut"
   }
 };
-
 // fin du timer 0: 00 
 if (timerShow === '0: 00'){
   console.log("endtimer");

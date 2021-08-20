@@ -57,7 +57,7 @@ class Data {
             let nbVDispo = "Nombre de vélo disponible(s): " + bikeStock[i].totalStands.availabilities.bikes;
             
             // ajout des markers sur la carte et dans un tableau
-            L.marker([lat, long], {icon: myIcon}).addTo(map).bindPopup("<h3 id='title'>" + name + "</h3> <p>" + address + "</br>" + nbVDispo + "</br></br><button class='bookBtn' id='bookBtn' onclick='book(" + i + ")'>Réserver un vélo</button></p>");
+            L.marker([lat, long], {icon: myIcon}).addTo(map).bindPopup("<h3 id='title'>" + name + "</h3> <p>" + address + "</br>" + nbVDispo + "</br></br><button class='bookBtn btn btn-success' id='bookBtn' onclick='book(" + i + ")'>Réserver un vélo</button></p>");
             markers.push(name);
         }
     };
